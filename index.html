@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rajan Studio - Professional Development Environment">
+    <meta name="keywords" content="code editor, development, programming">
+    <title>Rajan Studio | Modern Development Environment</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Preload important assets -->
+    <link rel="preload" href="assets/hero-bg.svg" as="image">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>
+                <span class="logo-icon"><i class="fas fa-code"></i></span>
+                <span class="logo-text">
+                    <span class="logo-rajan">Rajan</span>
+                    <span class="logo-studio">Studio</span>
+                </span>
+            </h1>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a>
+            <a href="#tools" class="nav-link"><i class="fas fa-tools"></i> Tools</a>
+            <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." id="searchInput">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="auth-buttons">
+                <!-- Auth buttons will be dynamically inserted here by auth.js -->
+            </div>
+            
+            <div class="theme-toggle">
+                <button id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="typing-effect" id="typingText">Welcome to Rajan Studio</div>
+            <p class="hero-subtitle">Modern Development Environment for Modern Developers</p>
+            
+            <div class="code-snippet">
+                <div class="code-header">
+                    <div class="file-tabs">
+                        <button class="file-tab active">main.js</button>
+                        <button class="file-tab">styles.css</button>
+                        <button class="file-tab">index.html</button>
+                    </div>
+                    <div class="code-actions">
+                        <button class="action-btn" title="Settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <button class="copy-btn" data-clipboard-target="#codeContent" title="Copy code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <pre><code id="codeContent" class="language-javascript">
+// Welcome to Rajan Studio
+const init = async () => {
+    try {
+        await setupEnvironment();
+        console.log("🚀 Ready to code!");
+    } catch (error) {
+        console.error("Houston, we have a problem:", error);
+    }
+};
+
+init();</code></pre>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-grid">
+            <h2 class="section-title">Powerful Features</h2>
+            <div class="features-container">
+                <div class="feature-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Clean Code</h3>
+                    <p>Write beautiful, maintainable code with our intelligent formatting</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Performance</h3>
+                    <p>Lightning-fast execution with optimized runtime environment</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure</h3>
+                    <p>Built-in security features to protect your code and data</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered</h3>
+                    <p>Smart suggestions and code completion powered by AI</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="tools-section">
+            <h2 class="section-title">Development Tools</h2>
+            <div class="tools-slider" id="toolsSlider">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://postimg.cc/PpPNPcNp" alt="VS Code" loading="lazy">
+                    </div>
+                    <h3>VS Code</h3>
+                    <p>Powerful code editing</p>
+                    <div class="tool-stats">
+                        <span><i class="fas fa-star"></i> 4.8/5</span>
+                        <span><i class="fas fa-download"></i> 1M+</span>
+                    </div>
+                </div>
+                <!-- Add more tool cards here -->
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Authentication Section -->
+        <section class="auth-section">
+            <div class="auth-container">
+                <h2>Get Started Today</h2>
+                <div class="button-group">
+                    <a href="signup.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Sign Up
+                    </a>
+                    <a href="login.html" class="btn btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <h3>Email Us</h3>
+                        <p>support@rajanstudio.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Call Us</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Visit Us</h3>
+                        <p>123 Developer Street, Code City, 12345</p>
+                    </div>
+                </div>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Full Name
+                            </label>
+                            <input type="text" id="name" required placeholder="Rajan Kumar">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </label>
+                            <input type="email" id="email" required placeholder="rajan@example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">
+                            <i class="fas fa-tag"></i>
+                            Subject
+                        </label>
+                        <input type="text" id="subject" required placeholder="How can we help?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment-alt"></i>
+                            Message
+                        </label>
+                        <textarea id="message" required placeholder="Your message here..." rows="5"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Rajan Studio</h3>
+                <p>Modern Development Environment</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="github.io/raj871" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rajan Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Notification System -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prismjs/1.24.1/prism.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Add Modal Components -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login</h2>
+                <button class="close-modal" onclick="closeModal('loginModal')">&times;</button>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" required>
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Login</button>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+                <button class="close-modal" onclick="closeModal('signupModal')">&times;</button>
+            </div>
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="signupPassword" required>
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <div class="password-input">
+                        <input type="password" id="signupConfirmPassword" required>
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
